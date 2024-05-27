@@ -1,6 +1,23 @@
+import {
+  Parenthesis,
+  SquareBrackets,
+  CurlyBrackets,
+  FullWidthParenthesis,
+  FullWidthSquareBrackets,
+  FullWidthCurlyBrackets,
+  CornerBrackets,
+  WhiteCornerBrackets,
+  LessGreeterThanAngleBrackets,
+  LenticularBrackets,
+  WhiteLenticularBrackets,
+  WhiteSquareBrackets
+} from './brackets'
+import type { Brackets } from './brackets'
 import type { TextlintRuleModule } from '@textlint/types'
 
-interface Options {}
+export interface Options {
+  disallowBrackets?: Brackets[]
+}
 
 const report: TextlintRuleModule<Options> = (_context, _options = {}) => {
   // const { Syntax, RuleError, report, fixer, getSource, locator } = context
@@ -9,5 +26,19 @@ const report: TextlintRuleModule<Options> = (_context, _options = {}) => {
 
 export default {
   linter: report,
-  fixer: report
+  fixer: report,
+  brackets: {
+    Parenthesis,
+    SquareBrackets,
+    CurlyBrackets,
+    FullWidthParenthesis,
+    FullWidthSquareBrackets,
+    FullWidthCurlyBrackets,
+    CornerBrackets,
+    WhiteCornerBrackets,
+    LessGreeterThanAngleBrackets,
+    LenticularBrackets,
+    WhiteLenticularBrackets,
+    WhiteSquareBrackets
+  }
 }
