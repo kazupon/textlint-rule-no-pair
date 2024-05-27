@@ -1,0 +1,79 @@
+{
+  "name": "textlint-rule-no-bracket",
+  "description": "textlint rule for no bracket",
+  "version": "0.0.0",
+  "author": {
+    "name": "kazuya kawaguchi",
+    "email": "kawakazu80@gmail.com"
+  },
+  "homepage": "https://github.com/kazupon/textlint-rule-no-bracket#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kazupon/textlint-rule-no-bracket.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kazupon/textlint-rule-no-bracket/issues"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/kazupon",
+  "keywords": [
+    "textlint",
+    "rule",
+    "textlintrule"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "packageManager": "npm@10.8.0",
+  "scripts": {
+    "prepare": "git config --local core.hooksPath .githooks",
+    "prepublish": "npm run build",
+    "changelog": "gh-changelogen --repo=kazupon/textlint-rule-no-bracket",
+    "release": "bumpp --commit \"release: v%s\" --push --tag",
+    "clean": "git clean -fx",
+    "test": "textlint-scripts test",
+    "build": "textlint-scripts build",
+    "watch": "textlint-scripts build --watch",
+    "lint": "run-p lint:prettier lint:eslint",
+    "lint:prettier": "prettier . --cache --check",
+    "lint:eslint": "eslint . --cache",
+    "fix": "run-p fix:*",
+    "fix:prettier": "prettier . --cache --write",
+    "fix:eslint": "npm run lint:eslint -- --fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "^8.56.0",
+    "@textlint/types": "^14.0.4",
+    "@types/eslint": "^8.56.10",
+    "@types/node": "^20.12.12",
+    "bumpp": "^9.4.1",
+    "eslint": "^8.56.0",
+    "gh-changelogen": "^0.2.8",
+    "lint-staged": "^15.2.4",
+    "npm-run-all2": "^6.2.0",
+    "pkg-types": "^1.1.1",
+    "prettier": "^3.2.5",
+    "textlint-scripts": "^14.0.4",
+    "textlint-tester": "^14.0.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.10.0"
+  },
+  "lint-staged": {
+    "*.{json,md,yml}": [
+      "prettier --write --ignore-unknown"
+    ],
+    "*.{js,mjs,cjs}": [
+      "prettier --write --ignore-unknown",
+      "eslint --fix"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write --ignore-unknown",
+      "eslint --fix"
+    ]
+  }
+}
