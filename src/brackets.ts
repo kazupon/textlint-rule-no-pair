@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Author: kazuya kawaguchi(a.k.a.kazupon)
+
 /**
  * Brackets Type
  * @description An interface that defines the bracket type.

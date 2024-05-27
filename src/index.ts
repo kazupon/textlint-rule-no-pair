@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Author: kazuya kawaguchi (a.k.a. kazupon)
+
 import {
   Parenthesis,
   SquareBrackets,
