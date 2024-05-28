@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-// Author: kazuya kawaguchi(a.k.a.kazupon)
+// Author: kazuya kawaguchi (a.k.a. kazupon)
 
 /**
  * Brackets Type

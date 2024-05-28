@@ -5,4 +5,4 @@
 
 ## ©️ License
 
-[MIT](http://opensource.org/licenses/MIT)
+MIT ©️ 2024 [kazupon](https://github.com/kazupon)
