@@ -31,7 +31,6 @@
   "packageManager": "npm@10.8.0",
   "scripts": {
     "prepare": "git config --local core.hooksPath .githooks",
-    "prepublish": "npm run build",
     "changelog": "gh-changelogen --repo=kazupon/textlint-rule-no-bracket",
     "release": "bumpp --commit \"release: v%s\" --push --tag",
     "clean": "git clean -fx",
@@ -44,6 +43,10 @@
     "fix": "run-p fix:*",
     "fix:prettier": "prettier . --cache --write",
     "fix:eslint": "npm run lint:eslint -- --fix"
+  },
+  "dependencies": {
+    "sentence-splitter": "^5.0.0",
+    "textlint-rule-helper": "^2.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^8.56.0",
