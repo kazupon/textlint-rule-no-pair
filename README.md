@@ -13,7 +13,7 @@ For example, if full-width parenthesis and lenticular brackets are not allowed, 
 ### ❌ NG
 
 ```
-They are coming to our house after work（around six o’ clock）.
+They are coming to our house after work（around six o'clock）.
 
 【重要】これは(秘密)です。
 ```
@@ -21,7 +21,7 @@ They are coming to our house after work（around six o’ clock）.
 ### ✅ OK
 
 ```
-They are coming to our house after work (around six o’ clock).
+They are coming to our house after work (around six o'clock).
 
 [重要] これは(秘密)です。
 ```
@@ -38,7 +38,7 @@ npm install textlint-rule-no-bracket
 
 ### Configure `.textlintrc`
 
-It’s recommended that this rule is used in `.textlintrc`.
+It’s recommended that this rule is used in `.textlintrc.js`.
 
 **This rule allows all brackets by default**. So you need to put to `disallowBrackets` option which brackets you do not allow.
 
