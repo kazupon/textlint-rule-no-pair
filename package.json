@@ -31,6 +31,7 @@
   "packageManager": "npm@10.8.0",
   "scripts": {
     "prepare": "git config --local core.hooksPath .githooks",
+    "prepublish": "npm run build",
     "changelog": "gh-changelogen --repo=kazupon/textlint-rule-no-bracket",
     "release": "bumpp --commit \"release: v%s\" --push --tag",
     "clean": "git clean -fx",
