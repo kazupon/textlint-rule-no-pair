@@ -64,7 +64,7 @@ If you would like to use other brackets, you can put the bracket scheme.
 You must define the bracket scheme, which is an object with following the properties:
 
 - `name`: the name of the bracket
-- `start`: the openning bracket character
+- `start`: the opening bracket character
 - `end`: the closing bracket character
 
 ```js
