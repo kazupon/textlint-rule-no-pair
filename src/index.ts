@@ -16,20 +16,20 @@ import {
   LenticularBrackets,
   WhiteLenticularBrackets,
   WhiteSquareBrackets
-} from './brackets'
+} from './pairs'
 import { createSourceCode } from './SourceCode'
-import { createBracketMarker } from './BracketMaker'
+import { createPairMarker } from './PairMaker'
 
 import type { TextlintRuleModule } from '@textlint/types'
-import type { Brackets } from './brackets'
+import type { Pair } from './pairs'
 
 export interface Options {
-  disallowBrackets?: Brackets[]
+  disallowPairs?: Pair[]
 }
 
 const report: TextlintRuleModule<Options> = (context, options = {}) => {
   const { Syntax, RuleError, report } = context
-  const disallowBrackets = options.disallowBrackets || []
+  const disallowPairs = options.disallowPairs || []
   const ignoreNodeManager = new IgnoreNodeManager()
   return {
     [Syntax.Paragraph](node) {
@@ -49,7 +49,7 @@ const report: TextlintRuleModule<Options> = (context, options = {}) => {
         .filter(node => node.type === SentenceSplitterSyntax.Sentence)
         .forEach(sentence => {
           const source = createSourceCode(sentence.raw)
-          const pairMaker = createBracketMarker(disallowBrackets)
+          const pairMaker = createPairMarker(disallowPairs)
           const sentenceIndex = sentence.range[0]
           while (source.canRead()) {
             // If the character is in ignored range, skip it
@@ -64,7 +64,7 @@ const report: TextlintRuleModule<Options> = (context, options = {}) => {
             report(
               node,
               new RuleError(
-                `Disallow ${ctxLoc.brackets.name} '${ctxLoc.brackets.start}' and '${ctxLoc.brackets.end}'.`,
+                `Disallow ${ctxLoc.pair.name} '${ctxLoc.pair.start}' and '${ctxLoc.pair.end}'.`,
                 {
                   index: sentenceIndex - node.range[0] + ctxLoc.index
                 }
@@ -77,9 +77,9 @@ const report: TextlintRuleModule<Options> = (context, options = {}) => {
 }
 
 /**
- * Supports export of individual built-in brackets
+ * Supports export of individual built-in pairs
  */
-const brackets = {
+const pairs = {
   Parenthesis,
   SquareBrackets,
   CurlyBrackets,
@@ -98,11 +98,11 @@ const brackets = {
  * Supports export of all built-in brackets with Array
  * ```
  */
-const defaultBrackets = Object.values(brackets)
+const defaultPairs = Object.values(pairs)
 
 export default {
   linter: report,
   fixer: report,
-  brackets,
-  defaultBrackets
+  pairs,
+  defaultPairs
 }

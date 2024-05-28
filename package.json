@@ -1,18 +1,18 @@
 {
-  "name": "textlint-rule-no-bracket",
+  "name": "textlint-rule-no-pair",
   "description": "textlint rule for no bracket",
   "version": "1.0.0",
   "author": {
     "name": "kazuya kawaguchi",
     "email": "kawakazu80@gmail.com"
   },
-  "homepage": "https://github.com/kazupon/textlint-rule-no-bracket#readme",
+  "homepage": "https://github.com/kazupon/textlint-rule-no-pair#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kazupon/textlint-rule-no-bracket.git"
+    "url": "git+https://github.com/kazupon/textlint-rule-no-pair.git"
   },
   "bugs": {
-    "url": "https://github.com/kazupon/textlint-rule-no-bracket/issues"
+    "url": "https://github.com/kazupon/textlint-rule-no-pair/issues"
   },
   "license": "MIT",
   "funding": "https://github.com/sponsors/kazupon",
@@ -33,7 +33,7 @@
   "scripts": {
     "prepare": "git config --local core.hooksPath .githooks",
     "prepublish": "npm run build",
-    "changelog": "gh-changelogen --repo=kazupon/textlint-rule-no-bracket",
+    "changelog": "gh-changelogen --repo=kazupon/textlint-rule-no-pair",
     "release": "bumpp --commit \"release: v%s\" --push --tag",
     "clean": "git clean -fx lib",
     "test": "textlint-scripts test",

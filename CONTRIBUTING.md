@@ -44,12 +44,12 @@
 
 ### Work Step Example
 
-- Fork the repository from [gh-changelogen](https://github.com/kazupon/textlint-rule-no-bracket) !
+- Fork the repository from [gh-changelogen](https://github.com/kazupon/textlint-rule-no-pair) !
 - Create your topic branch from `master`: `git branch my-new-topic origin/main`
 - Add codes and pass tests !
 - Commit your changes: `git commit -am 'Add some topic'`
 - Push to the branch: `git push origin my-new-topic`
-- Submit a pull request to `main` branch of `kazupon/textlint-rule-no-bracket` repository !
+- Submit a pull request to `main` branch of `kazupon/textlint-rule-no-pair` repository !
 
 ## Development Setup
 
