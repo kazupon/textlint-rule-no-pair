@@ -5,11 +5,11 @@ import {
   FullWidthParenthesis,
   LenticularBrackets,
   CornerBrackets
-} from '../src/brackets'
+} from '../src/pairs'
 
 const tester = new TextLintTester()
 
-tester.run('no-bracket', rule, {
+tester.run('no-pair', rule, {
   valid: [
     `{"{ABC}"}`,
     'test {"{ABC`{"{ABC}"}`}"} ok.',
@@ -31,7 +31,7 @@ tester.run('no-bracket', rule, {
     {
       text: '【重要】これは（秘密）です。',
       options: {
-        disallowBrackets: [FullWidthParenthesis, LenticularBrackets]
+        disallowPairs: [FullWidthParenthesis, LenticularBrackets]
       },
       errors: [
         {
@@ -49,7 +49,7 @@ tester.run('no-bracket', rule, {
         '`src/App.js`にファイルを作成し、次のような内容のJavaScriptモジュールとします。\n' +
         'モジュールは、基本的には何かしらを外部に公開(`export`)します。',
       options: {
-        disallowBrackets: [Parenthesis]
+        disallowPairs: [Parenthesis]
       },
       errors: [
         {
@@ -60,7 +60,7 @@ tester.run('no-bracket', rule, {
     {
       text: `このように\`count\`変数が自動解放されずに保持できているのは「（\`increment\`）関数が外側のスコープにある（\`count\`）変数への参照を保持できる」ためです。このような性質のことをクロージャー(関数閉包)と呼びます。クロージャーは静的スコープと変数は参照され続けていればデータは保持されるという2つの性質によって成り立っています。`,
       options: {
-        disallowBrackets: [FullWidthParenthesis, CornerBrackets]
+        disallowPairs: [FullWidthParenthesis, CornerBrackets]
       },
       errors: [
         {
@@ -89,7 +89,7 @@ tester.run('no-bracket', rule, {
 
 このように\`count\`変数が自動解放されずに保持できているのは「（\`increment\`）関数が外側のスコープにある（\`count\`）変数への参照を保持できる」ためです。このような性質のことをクロージャー(関数閉包)と呼びます。クロージャーは静的スコープと変数は参照され続けていればデータは保持されるという2つの性質によって成り立っています。`,
       options: {
-        disallowBrackets: [FullWidthParenthesis, CornerBrackets]
+        disallowPairs: [FullWidthParenthesis, CornerBrackets]
       },
       errors: [
         {
