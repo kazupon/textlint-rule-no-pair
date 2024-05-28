@@ -35,7 +35,7 @@
     "prepublish": "npm run build",
     "changelog": "gh-changelogen --repo=kazupon/textlint-rule-no-bracket",
     "release": "bumpp --commit \"release: v%s\" --push --tag",
-    "clean": "git clean -fx",
+    "clean": "git clean -fx lib",
     "test": "textlint-scripts test",
     "build": "run-p build:*",
     "build:rule": "textlint-scripts build",
