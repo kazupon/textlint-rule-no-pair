@@ -11,11 +11,11 @@ export interface Brackets {
    */
   name: string
   /**
-   * The opening bracket.
+   * The opening bracket character.
    */
   start: string
   /**
-   * The closing bracket.
+   * The closing bracket character.
    */
   end: string
 }
