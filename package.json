@@ -22,6 +22,7 @@
     "textlintrule"
   ],
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
@@ -36,7 +37,9 @@
     "release": "bumpp --commit \"release: v%s\" --push --tag",
     "clean": "git clean -fx",
     "test": "textlint-scripts test",
-    "build": "textlint-scripts build",
+    "build": "run-p build:*",
+    "build:rule": "textlint-scripts build",
+    "build:dts": "tsc -p tsconfig.dts.json",
     "watch": "textlint-scripts build --watch",
     "lint": "run-p lint:prettier lint:eslint",
     "lint:prettier": "prettier . --cache --check",
