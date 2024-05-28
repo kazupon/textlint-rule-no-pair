@@ -1,7 +1,7 @@
 {
   "name": "textlint-rule-no-bracket",
   "description": "textlint rule for no bracket",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "kazuya kawaguchi",
     "email": "kawakazu80@gmail.com"
