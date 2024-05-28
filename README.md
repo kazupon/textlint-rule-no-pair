@@ -67,6 +67,8 @@ You must define the bracket scheme, which is an object with following the proper
 - `start`: the opening bracket character
 - `end`: the closing bracket character
 
+these interface is defined in [here](https://github.com/kazupon/textlint-rule-no-bracket/blob/c43a27eca5809f485272ce2d5e16a3de88e09d1a/src/brackets.ts#L8-L21)
+
 ```js
 module.exports = {
   rules: {
@@ -97,6 +99,8 @@ module.exports = {
 - Lenticular Brackets: `【` and `】`
 - White Lenticular Brackets: `〖` and `〗`
 - White Square Brackets: `〚` and `〛`
+
+These built-in brackets is defined in [here](https://github.com/kazupon/textlint-rule-no-bracket/blob/main/src/brackets.ts#L27-L145)
 
 If you would like to use these built-in brackets and custom brackets, you can use spread syntax (`...`) as follows:
 
